@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ticket System</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+  <main class="app-container">
+    <header>
+      <h1>Ticket System</h1>
+    </header>
+    <div class="content-wrapper">
+      <section class="form-section">
+        <h2 id="form-heading">Neues Ticket erstellen</h2>
+        <form id="ticket-form">
+          <label for="title">Titel:</label>
+          <input type="text" id="title" required />
+
+          <label for="description">Beschreibung (Markdown wird unterstützt):</label>
+          <textarea id="description" rows="6" required></textarea>
+
+          <label for="status">Status:</label>
+          <select id="status">
+            <option value="offen">Offen</option>
+            <option value="pausiert">Pausiert</option>
+            <option value="abgeschlossen">Abgeschlossen</option>
+          </select>
+
+          <label for="urgency">Dringlichkeit:</label>
+          <select id="urgency">
+            <option value="nicht-dringend">Nicht dringend</option>
+            <option value="dringend">Dringend</option>
+            <option value="sehr-dringend">Sehr dringend</option>
+          </select>
+
+          <button type="submit" class="submit-btn">Ticket erstellen</button>
+          <button type="button" id="cancel-edit-btn" class="cancel-btn" hidden>Abbrechen</button>
+        </form>
+      </section>
+
+      <section class="tickets-section">
+        <h2>Erstellte Tickets</h2>
+        <div id="ticket-list"></div>
+      </section>
+    </div>
+  </main>
+
+  <script type="module" src="index.js"></script>
+</body>
+</html>
